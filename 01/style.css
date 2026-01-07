@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* Allows 1rem = 10px */
+} 
+
+body {
+    font-family: "Inter";
+    font-size: 1.6rem; /* Sets base size to 16px */
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
