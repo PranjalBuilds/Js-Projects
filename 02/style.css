@@ -23,8 +23,9 @@ body {
   margin: 50px auto;
   position: relative;
   padding: 2rem;
-  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
-    inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow:
+   0 4px 16px rgba(0, 0, 0, 0.15),
+  inset 0 4px 16px rgba(0, 0, 0, 0.15); 
 }
 
 .clock-face {
@@ -40,4 +41,8 @@ body {
   background: black;
   position: absolute;
   top: 50%;
+  left: 0;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.05s cubic-bezier(0.1, 2.7, 0.58, 1);
 }
