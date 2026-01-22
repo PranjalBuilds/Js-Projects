@@ -34,6 +34,7 @@ console.log(totalYear);
 
 
 //with reduce
+// how many years did all the inventor live?
 
 const totalYears = inventors.reduce((total, inventor) => {
     return total + (inventor.passed - inventor.year);
@@ -143,3 +144,35 @@ products.reduce((acc, product) => {
 
 console.log("\n");
 console.log(indexMap[105]);
+
+
+// sort inventeors by the years they lived (by age)
+
+const sortedInventorsByAge = [...inventors].sort((a, b) => { // sort mutates the actual array, so to prevent that we used another array and stored those values in that and then, performed the operation. 
+
+    const lastInventor = a.passed - a.year;
+    const nextInventor = b.passed - b.year;
+
+    return nextInventor > lastInventor ? -1 : 1;
+})
+
+console.table(sortedInventorsByAge);
+
+
+// sort inventors by birthPeriod
+
+const sortedInventorsByBirth = [...inventors].sort((a,b) => {
+    a.year - b.year // who lived earlier
+    // b.year - a.year // who lived later will come first
+    // a.passed - b.passed // who died earlier
+    
+})
+
+console.table(sortedInventorsByBirth)
+
+const inventeorsForTable = inventors.map(inv => ({
+    ...inv,
+    lived: inv.passed - inv.year
+}))
+
+console.table(inventeorsForTable)
