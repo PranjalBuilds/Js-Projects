@@ -176,3 +176,15 @@ const inventeorsForTable = inventors.map(inv => ({
 }))
 
 console.table(inventeorsForTable)
+
+
+// map filter practise using real life scenario
+// creating a list of boulevards in paris that contain 'de' anywhere in the name 
+// link : https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+const category = document.querySelector('#mw-pages');
+const links = Array.from(category.querySelectorAll('a'));
+
+const de = links.map(link => link.textContent).filter(streetName => streetName.includes('de'));
+
+console.log(de);    
