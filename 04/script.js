@@ -176,7 +176,7 @@ const inventeorsForTable = inventors.map(inv => ({
 }))
 
 console.table(inventeorsForTable)
-
+    
 
 // map filter practise using real life scenario
 // creating a list of boulevards in paris that contain 'de' anywhere in the name 
