@@ -3,6 +3,7 @@ import { users } from "./data.js";
 import { cart } from "./data.js";
 import { usersCountry } from "./data.js";
 import { products } from "./data.js";
+import { people } from "./data.js";
 
 // Map, Filter, ForEach
 
@@ -188,3 +189,39 @@ const links = Array.from(category.querySelectorAll('a'));
 const de = links.map(link => link.textContent).filter(streetName => streetName.includes('de'));
 
 console.log(de);    
+
+
+// sort exercise
+// sort people alphabetically by the last name 
+
+const sortByLname = people.sort((lastOne, nextOne) => {
+    //const parts = lastOne.split(', '); 
+
+    // destructuring parts
+    const [A_last, A_first] = lastOne.split(', '); 
+    const [B_last, B_first] = nextOne.split(', '); 
+    
+    return A_last > B_last ? 1 : -1;
+    
+});
+
+console.log(sortByLname);
+
+
+// Reduce exercise
+// Sum up these instances using reduce
+
+const data = ['car', 'truck', 'car', 'car', 'car', 'truck', 'truck'];
+
+const transportation = data.reduce((obj, item) => {
+    // console.log(item);
+    // return obj;
+    
+    if(!obj[item]){
+        obj[item] = 0;
+    }
+    obj[item]++;
+    return obj;
+}, {})
+
+console.log(transportation);
